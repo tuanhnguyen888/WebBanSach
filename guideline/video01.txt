@@ -20,4 +20,3 @@ I) Phân tích dự án:
 		Hiển thị đc danh sách đơn hàng -> hiển thị giảm dần theo thời gian
 			(quản lý đc trạng thái đơn hàng)
 	- Quản lý phản hồi
-
