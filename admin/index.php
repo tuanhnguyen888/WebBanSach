@@ -1,23 +1,15 @@
 <?php
-	session_start();
-
-	require_once('../utils/utility.php');
-	require_once('../database/dbhelper.php');
-
-	$user = getUserToken();
-	if($user == null) {
-		header('Location: authen/login.php');
-		die();
-	}
+	$title = 'Dashboard Page';
+	$baseUrl = '';
+	require_once('layouts/header.php');
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Trang Quản Trị</title>
-</head>
-<body>
-	<h1 class="text-center">Chào mừng bạn tới trang quản trị web</h1>
-</body>
-</html>
+<div class="row">
+	<div class="col-md-12">
+		<h1>Dashboard</h1>
+	</div>
+</div>
+
+<?php
+	require_once('layouts/footer.php');
+?>
