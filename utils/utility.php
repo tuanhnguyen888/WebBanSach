@@ -78,6 +78,7 @@ function moveFile($key, $rootPath = "../../") {
 	$pathTemp = $_FILES[$key]["tmp_name"];
 
 	$filename = $_FILES[$key]['name'];
+	//filename -> remove special character, ..., ...
 
 	$newPath="assets/photos/".$filename;
 
