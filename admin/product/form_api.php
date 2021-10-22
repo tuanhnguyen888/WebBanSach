@@ -13,14 +13,14 @@ if(!empty($_POST)) {
 
 	switch ($action) {
 		case 'delete':
-			deleteUser();
+			deleteProduct();
 			break;
 	}
 }
 
-function deleteUser() {
+function deleteProduct() {
 	$id = getPost('id');
 	$updated_at = date("Y-m-d H:i:s");
-	$sql = "update User set deleted = 1, updated_at = '$updated_at' where id = $id";
+	$sql = "update Product set deleted = 1, updated_at = '$updated_at' where id = $id";
 	execute($sql);
 }
