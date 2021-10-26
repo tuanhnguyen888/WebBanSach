@@ -1,5 +1,8 @@
 <?php 
 require_once('layouts/header.php');
+
+$sql = "select Product.*, Category.name as category_name from Product left join Category on Product.category_id = Category.id order by Product.updated_at desc limit 0,8";
+$lastestItems = executeResult($sql);
 ?>
 <!-- banner -->
 <div id="demo" class="carousel slide" data-ride="carousel">
