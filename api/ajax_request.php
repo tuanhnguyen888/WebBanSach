@@ -41,7 +41,7 @@ function checkout() {
 		$totalMoney += $item['discount'] * $item['num'];
 	}
 
-	$sql = "insert into Orders(user_id, fullname, email, phone_number, address, note, order_date, status, total_money) values ($userId, '$fullname', '$email', '$phone_number', '$address', '$note', '$orderDate', 1, '$totalMoney')";
+	$sql = "insert into Orders(user_id, fullname, email, phone_number, address, note, order_date, status, total_money) values ($userId, '$fullname', '$email', '$phone_number', '$address', '$note', '$orderDate', 0, '$totalMoney')";
 	execute($sql);
 
 	$sql = "select * from Orders where order_date = '$orderDate'";
