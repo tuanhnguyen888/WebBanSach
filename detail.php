@@ -67,11 +67,11 @@ $lastestItems = executeResult($sql);
 				<del><?=number_format($product['price'])?> VND</del>
 			</p>
 			<div style="display: flex;">
-				<button class="btn btn-light" style="border: solid #e0dede 1px; border-radius: 0px;">-</button>
-				<input type="number" name="num" class="form-control" step="1" value="1" style="max-width: 90px;border: solid #e0dede 1px; border-radius: 0px;">
-				<button class="btn btn-light" style="border: solid #e0dede 1px; border-radius: 0px;">+</button>
+				<button class="btn btn-light" style="border: solid #e0dede 1px; border-radius: 0px;" onclick="addMoreCart(-1)">-</button>
+				<input type="number" name="num" class="form-control" step="1" value="1" style="max-width: 90px;border: solid #e0dede 1px; border-radius: 0px;" onchange="fixCartNum()">
+				<button class="btn btn-light" style="border: solid #e0dede 1px; border-radius: 0px;" onclick="addMoreCart(1)">+</button>
 			</div>
-			<button class="btn btn-success" style="margin-top: 20px; width: 100%; border-radius: 0px; font-size: 30px;">
+			<button class="btn btn-success" style="margin-top: 20px; width: 100%; border-radius: 0px; font-size: 30px;" onclick="addCart(<?=$product['id']?>, $('[name=num]').val())">
 				<i class="bi bi-cart-plus-fill"></i> THÊM VÀO GIỎ HÀNG
 			</button>
 			<button class="btn btn-secondary" style="margin-top: 20px; width: 100%; border-radius: 0px; font-size: 30px; background-color: #edebeb; border: solid #edebeb 1px; color: black;">
@@ -94,11 +94,25 @@ $lastestItems = executeResult($sql);
 					<p style="font-weight: bold;">'.$item['category_name'].'</p>
 					<a href="detail.php?id='.$item['id'].'"><p style="font-weight: bold;">'.$item['title'].'</p></a>
 					<p style="color: red; font-weight: bold;">'.number_format($item['discount']).' VND</p>
+					<p><button class="btn btn-success" onclick="addCart('.$item['id'].', 1)" style="width: 100%; border-radius: 0px;"><i class="bi bi-cart-plus-fill"></i> Thêm giỏ hàng</button></p>
 				</div>';
 		}
 	?>
 	</div>
 </div>
+
+<script type="text/javascript">
+	function addMoreCart(delta) {
+		num = parseInt($('[name=num]').val())
+		num += delta
+		if(num < 1) num = 1;
+		$('[name=num]').val(num)
+	}
+
+	function fixCartNum() {
+		$('[name=num]').val(Math.abs($('[name=num]').val()))
+	}
+</script>
 <?php
 require_once('layouts/footer.php');
 ?>

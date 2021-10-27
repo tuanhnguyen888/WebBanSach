@@ -46,6 +46,7 @@ $lastestItems = executeResult($sql);
 					<p style="font-weight: bold;">'.$item['category_name'].'</p>
 					<a href="detail.php?id='.$item['id'].'"><p style="font-weight: bold;">'.$item['title'].'</p></a>
 					<p style="color: red; font-weight: bold;">'.number_format($item['discount']).' VND</p>
+					<p><button class="btn btn-success" onclick="addCart('.$item['id'].', 1)" style="width: 100%; border-radius: 0px;"><i class="bi bi-cart-plus-fill"></i> Thêm giỏ hàng</button></p>
 				</div>';
 		}
 	?>
@@ -70,6 +71,7 @@ foreach($menuItems as $item) {
 				<p style="font-weight: bold;">'.$pItem['category_name'].'</p>
 				<a href="detail.php?id='.$item['id'].'"><p style="font-weight: bold;">'.$pItem['title'].'</p></a>
 				<p style="color: red; font-weight: bold;">'.number_format($pItem['discount']).' VND</p>
+				<p><button class="btn btn-success" onclick="addCart('.$item['id'].', 1)" style="width: 100%; border-radius: 0px;"><i class="bi bi-cart-plus-fill"></i> Thêm giỏ hàng</button></p>
 			</div>';
 	}
 ?>

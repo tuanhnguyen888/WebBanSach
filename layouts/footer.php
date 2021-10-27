@@ -35,5 +35,33 @@
 		© 2018 Zic Zac Group . Được thiết kế bời ZicZac. All rights reserved.
 	</div>
 </footer>
+
+<?php
+if(!isset($_SESSION['cart'])) {
+	$_SESSION['cart'] = [];
+}
+$count = 0;
+// var_dump($_SESSION['cart']);
+foreach($_SESSION['cart'] as $item) {
+	$count += $item['num'];
+}
+?>
+<script type="text/javascript">
+	function addCart(productId, num) {
+		$.post('api/ajax_request.php', {
+			'action': 'cart',
+			'id': productId,
+			'num': num
+		}, function(data) {
+			location.reload()
+		})
+	}
+</script>
+<!-- Cart start -->
+<span class="cart_icon">
+	<span class="cart_count"><?=$count?></span>
+	<img src="https://gokisoft.com/img/cart.png">
+</span>
+<!-- Cart stop -->
 </body>
 </html>

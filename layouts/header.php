@@ -62,6 +62,31 @@
 			padding-top: 10px;
 			padding-bottom: 10px;
 		}
+
+		.cart_icon {
+			position: fixed;
+			z-index: 999999;
+			right: 0px;
+			top: 45%;
+		}
+
+		.cart_icon img {
+			width: 45px;
+		}
+
+		.cart_icon .cart_count {
+			background-color: red;
+			color: white;
+			font-size: 16px;
+			padding-top: 2px;
+			padding-bottom: 2px;
+			padding-left: 10px;
+			padding-right: 10px;
+			font-weight: bold;
+			border-radius: 12px;
+			position: fixed;
+			right: 40px;
+		}
 	</style>
 </head>
 <body>
