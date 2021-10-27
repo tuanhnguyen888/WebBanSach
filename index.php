@@ -42,9 +42,9 @@ $lastestItems = executeResult($sql);
 	<?php
 		foreach($lastestItems as $item) {
 			echo '<div class="col-md-3 col-6 product-item">
-					<img src="'.$item['thumbnail'].'" style="width: 100%; height: 220px;">
+					<a href="detail.php?id='.$item['id'].'"><img src="'.$item['thumbnail'].'" style="width: 100%; height: 220px;"></a>
 					<p style="font-weight: bold;">'.$item['category_name'].'</p>
-					<p style="font-weight: bold;">'.$item['title'].'</p>
+					<a href="detail.php?id='.$item['id'].'"><p style="font-weight: bold;">'.$item['title'].'</p></a>
 					<p style="color: red; font-weight: bold;">'.number_format($item['discount']).' VND</p>
 				</div>';
 		}
@@ -66,9 +66,9 @@ foreach($menuItems as $item) {
 <?php
 	foreach($items as $pItem) {
 		echo '<div class="col-md-3 col-6 product-item">
-				<img src="'.$pItem['thumbnail'].'" style="width: 100%; height: 220px;">
+				<a href="detail.php?id='.$item['id'].'"><img src="'.$pItem['thumbnail'].'" style="width: 100%; height: 220px;"></a>
 				<p style="font-weight: bold;">'.$pItem['category_name'].'</p>
-				<p style="font-weight: bold;">'.$pItem['title'].'</p>
+				<a href="detail.php?id='.$item['id'].'"><p style="font-weight: bold;">'.$pItem['title'].'</p></a>
 				<p style="color: red; font-weight: bold;">'.number_format($pItem['discount']).' VND</p>
 			</div>';
 	}
